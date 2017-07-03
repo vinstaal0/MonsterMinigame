@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	$Config = json_decode( file_get_contents( __DIR__ . '/php/files/config.json' ) );
+	$Config = json_decode( file_get_contents( __DIR__ . 'MonsterMinigame/php/files/config.json' ) );
 	$CDN = $Config->Assets->Host;
 	
 	header( 'Content-Security-Policy: script-src \'none\';' );
@@ -10,30 +10,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tower Attack</title>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="MonsterMinigame/favicon.ico" type="image/x-icon">
 
-	<link href="<?php echo $CDN; ?>/assets/css/towerattack.css?v=<?php echo hash_file( 'crc32', __DIR__ . '/assets/css/towerattack.css' ); ?>" rel="stylesheet" type="text/css">
-	<link href="<?php echo $CDN; ?>/assets/css/towerattack_listgames.css?v=<?php echo hash_file( 'crc32', __DIR__ . '/assets/css/towerattack_listgames.css' ); ?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo $CDN; ?>MonsterMinigame/assets/css/towerattack.css?v=<?php echo hash_file( 'crc32', __DIR__ . '/assets/css/towerattack.css' ); ?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo $CDN; ?>MonsterMinigame/assets/css/towerattack_listgames.css?v=<?php echo hash_file( 'crc32', __DIR__ . 'MonsterMinigame/assets/css/towerattack_listgames.css' ); ?>" rel="stylesheet" type="text/css">
 </head>
 <body class="flat_page">
-	<div class="page_background" style="background-image: url('/assets/promo_bg/08_volcano_page_background.jpg');">
+	<div class="page_background" style="background-image: url('MonsterMinigame/assets/promo_bg/08_volcano_page_background.jpg');">
 
 		<div class="section_overview">
 			<div class="section_monster">
 				<div class="monster_ctn">
-					<img class="promo_creep" src="/assets/promo_bg/08_volcano_creep.gif">
-					<img class="promo_creep_shadow" src="/assets/promo_bg/shadow_small.png">
+					<img class="promo_creep" src="MonsterMinigame/assets/promo_bg/08_volcano_creep.gif">
+					<img class="promo_creep_shadow" src="MonsterMinigame/assets/promo_bg/shadow_small.png">
 					<div class="boss_ctn">
-						<img class="promo_boss" src="/assets/promo_bg/08_volcano_boss.gif">
+						<img class="promo_boss" src="MonsterMinigame/assets/promo_bg/08_volcano_boss.gif">
 					</div>
-					<img class="promo_boss_shadow" src="/assets/promo_bg/shadow_large.png">
+					<img class="promo_boss_shadow" src="MonsterMinigame/assets/promo_bg/shadow_large.png">
 				</div>
 			</div>
 
 
 			<div class="section_play">
 				<div class="logo">
-					<img src="/assets/images/logo_main_english.png">
+					<img src="MonsterMinigame/assets/images/logo_main_english.png">
 				</div>
 
 
@@ -43,13 +43,13 @@
 <?php
 	if( isset( $_SESSION[ 'SteamID' ] ) ):
 ?>
-						<a href="/play/" class="main_btn">
+						<a href="MonsterMinigame/play/" class="main_btn">
 							<span>Resume Your Game</span>
 						</a>
 <?php
 	else:
 ?>
-						<a href="/login.php" class="main_btn">
+						<a href="MonsterMinigame/login.php" class="main_btn">
 							<span>Login with Steam</span>
 						</a>
 <?php
