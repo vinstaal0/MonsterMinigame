@@ -14,8 +14,8 @@ $Loader = new \SteamDB\Psr4AutoloaderClass;
 $Loader->register();
 
 // register the base directories for the namespace prefix
-$Loader->addNamespace('SteamDB\CTowerAttack', __DIR__ . '/src/TowerAttack');
-$Loader->addNamespace('Psr', __DIR__ . '/src/Psr');
+$Loader->addNamespace('SteamDB\CTowerAttack', __DIR__ . '/MonsterMinigame/src/TowerAttack');
+$Loader->addNamespace('Psr', __DIR__ . '/MonsterMinigame/src/Psr');
 
 $Server = new \SteamDB\CTowerAttack\Server( 5337 );
 
