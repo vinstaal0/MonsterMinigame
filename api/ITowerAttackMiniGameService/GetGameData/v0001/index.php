@@ -1,5 +1,5 @@
 <?php
-	require __DIR__ . '/../../Init.php';
+	require __DIR__ . '/MonsterMinigame/../../Init.php';
 	
 	$Result = Handle( INPUT_GET, [
 		'method' => 'GetGameData',
