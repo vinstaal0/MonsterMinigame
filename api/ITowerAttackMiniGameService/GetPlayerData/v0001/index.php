@@ -5,7 +5,7 @@
 		die;
 	}
 	
-	require __DIR__ . '/../../Init.php';
+	require __DIR__ . '/MonsterMinigame/../../Init.php';
 	
 	session_start();
 	
