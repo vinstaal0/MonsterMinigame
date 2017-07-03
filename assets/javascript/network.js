@@ -13,7 +13,7 @@ CServerInterface.prototype.BuildURL = function( strInterface, strMethod, bSecure
 	if ( !strVersion )
 		strVersion = 'v0001';
 
-	return '/api/' + strInterface + '/' + strMethod + '/' + strVersion + '/';
+	return '/MonsterMinigame/api/' + strInterface + '/' + strMethod + '/' + strVersion + '/';
 }
 
 CServerInterface.prototype.GetGameTuningData = function( callback )
