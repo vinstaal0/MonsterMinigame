@@ -3,7 +3,7 @@
 
 	if( !isset( $_SESSION[ 'SteamID' ] ) )
 	{
-		header( 'Location: /' );
+		header( 'Location: /MonsterMinigame/' );
 		die;
 	}
 
@@ -24,15 +24,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tower Attack</title>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link href="<?php echo $CDN; ?>/assets/css/towerattack.css?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/css/towerattack.css' ); ?>" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="/MonsterMinigame/favicon.ico" type="image/x-icon">
+	<link href="<?php echo $CDN; ?>/MonsterMinigame/assets/css/towerattack.css?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/css/towerattack.css' ); ?>" rel="stylesheet" type="text/css">
 </head>
 <body
 data-steamid="<?php echo $_SESSION[ 'SteamID' ]; ?>"
 data-gameid="1"
 data-assets="<?php echo $CDN; ?>"
 data-ga="<?php echo $Config->Google->Analytics; ?>">
-	<a href="https://github.com/SteamDatabase/MonsterMinigame" target="_blank" class="github"><img src="<?php echo $CDN; ?>/assets/emoticons/rfacepalm.png" style="vertical-align:text-bottom;image-rendering:pixelated"> View on GitHub</a>
+	<a href="https://github.com/SteamDatabase/MonsterMinigame" target="_blank" class="github"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/emoticons/rfacepalm.png" style="vertical-align:text-bottom;image-rendering:pixelated"> View on GitHub</a>
 
 	<div class="breadcrumbs">
 		<a href="/">Monster Game</a> &gt; <span id="game_version" style="color:#9AC0FF"></span>
@@ -51,7 +51,7 @@ data-ga="<?php echo $Config->Google->Analytics; ?>">
 
 			<div id="col_left">
 				<div class="gold_count">
-					<img src="<?php echo $CDN; ?>/assets/emoticons/coinz.png" alt="Gold">
+					<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/emoticons/coinz.png" alt="Gold">
 					<div id="info_gold"></div>
 				</div>
 
@@ -71,25 +71,25 @@ data-ga="<?php echo $Config->Google->Analytics; ?>">
 					<div class="element_cost">Next Level Cost:<span class="cost" id="element_cost">00,000</span></div>
 					<div class="upgrades">
 						<div class="element_upgrade" id="upgr_3">
-							<img src="<?php echo $CDN; ?>/assets/emoticons/shelterwildfire.png" alt="Fire">
+							<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/emoticons/shelterwildfire.png" alt="Fire">
 							<span class="level">0</span>
 							<br>
 							<a class="link element_upgrade_btn" data-type="3" href="#" data-tooltip-func="fnTooltipUpgradeElementDesc">&nbsp;</a>
 						</div>
 						<div class="element_upgrade"  id="upgr_4">
-							<img src="<?php echo $CDN; ?>/assets/emoticons/waterrune.png" alt="Water">
+							<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/emoticons/waterrune.png" alt="Water">
 							<span class="level">0</span>
 							<br>
 							<a class="link element_upgrade_btn" data-type="4" href="#" data-tooltip-func="fnTooltipUpgradeElementDesc">&nbsp;</a>
 						</div>
 						<div class="element_upgrade" id="upgr_6">
-							<img src="<?php echo $CDN; ?>/assets/emoticons/FateTree.png" alt="Earth">
+							<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/emoticons/FateTree.png" alt="Earth">
 							<span class="level">0</span>
 							<br>
 							<a class="link element_upgrade_btn" data-type="6" href="#" data-tooltip-func="fnTooltipUpgradeElementDesc">&nbsp;</a>
 						</div>
 						<div class="element_upgrade" id="upgr_5">
-							<img src="<?php echo $CDN; ?>/assets/emoticons/Wisp.png" alt="Air">
+							<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/emoticons/Wisp.png" alt="Air">
 							<span class="level">0</span>
 							<br>
 							<a class="link element_upgrade_btn" data-type="5" href="#" data-tooltip-func="fnTooltipUpgradeElementDesc">&nbsp;</a>
@@ -104,20 +104,20 @@ data-ga="<?php echo $Config->Google->Analytics; ?>">
 						<span class="label">Lane 1</span>
 						<div class="bar"><div></div></div>
 						<div class="lane_element" data-tooltip-func="fnTooltipLaneElementDesc"><span></span></div><!--
-						--><div class="lane_enemy enemy_icon_2" id="lane0_enemy_icon_2" data-tooltip-content="There is a Boss Monster in this lane!" style="display: none;"><img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png"></div><!--
+						--><div class="lane_enemy enemy_icon_2" id="lane0_enemy_icon_2" data-tooltip-content="There is a Boss Monster in this lane!" style="display: none;"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png"></div><!--
 						--><div class="lane_enemy enemy_icon_4" id="lane0_enemy_icon_4" data-tooltip-content="There is a Treasure Monster in this lane!<br><br>Treasure Monsters drop lots of gold, but disappear very quickly!" style="display: none;"><img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png"></div>
 					</a><a id="lane1" class="lane" href="#" data-lane="1">
 						<span class="label">Lane 2</span>
 						<div class="bar"><div></div></div>
 						<div class="lane_element" data-tooltip-func="fnTooltipLaneElementDesc"><span></span></div><!--
-						--><div class="lane_enemy enemy_icon_2" id="lane1_enemy_icon_2" data-tooltip-content="There is a Boss Monster in this lane!" style="display: none;"><img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png"></div><!--
-						--><div class="lane_enemy enemy_icon_4" id="lane1_enemy_icon_4" data-tooltip-content="There is a Treasure Monster in this lane!<br><br>Treasure Monsters drop lots of gold, but disappear very quickly!" style="display: none;"><img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png"></div>
+						--><div class="lane_enemy enemy_icon_2" id="lane1_enemy_icon_2" data-tooltip-content="There is a Boss Monster in this lane!" style="display: none;"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png"></div><!--
+						--><div class="lane_enemy enemy_icon_4" id="lane1_enemy_icon_4" data-tooltip-content="There is a Treasure Monster in this lane!<br><br>Treasure Monsters drop lots of gold, but disappear very quickly!" style="display: none;"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png"></div>
 					</a><a id="lane2" class="lane" href="#" data-lane="2">
 						<span class="label">Lane 3</span>
 						<div class="bar"><div></div></div>
 						<div class="lane_element" data-tooltip-func="fnTooltipLaneElementDesc"><span></span></div><!--
-						--><div class="lane_enemy enemy_icon_2" id="lane2_enemy_icon_2" data-tooltip-content="There is a Boss Monster in this lane!" style="display: none;"><img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png"></div><!--
-						--><div class="lane_enemy enemy_icon_4" id="lane2_enemy_icon_4" data-tooltip-content="There is a Treasure Monster in this lane!<br><br>Treasure Monsters drop lots of gold, but disappear very quickly!" style="display: none;"><img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png"></div>
+						--><div class="lane_enemy enemy_icon_2" id="lane2_enemy_icon_2" data-tooltip-content="There is a Boss Monster in this lane!" style="display: none;"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png"></div><!--
+						--><div class="lane_enemy enemy_icon_4" id="lane2_enemy_icon_4" data-tooltip-content="There is a Treasure Monster in this lane!<br><br>Treasure Monsters drop lots of gold, but disappear very quickly!" style="display: none;"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png"></div>
 					</a>
 				</div>
 
@@ -279,7 +279,7 @@ data-ga="<?php echo $Config->Google->Analytics; ?>">
 		<!-- Templates -->
 
 		<div id="purchase_ability_item_template" class="purchase_ability_item ta_tip" data-tooltip-func="fnTooltipAbilityDesc">
-			<img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png">
+			<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png">
 			<span class="nameblock">
 				<span class="name"></span>
 				<span class="cost"></span>
@@ -332,35 +332,35 @@ data-ga="<?php echo $Config->Google->Analytics; ?>">
 
 		<div id="abilitytemplate" class="abilitytemplate">
 			<a class="link ta_tip" href="#" data-tooltip-func="fnTooltipAbilityDesc">
-				<img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png">
+				<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png">
 				<div class="timeleft"></div>
 			</a>
 		</div>
 
 		<div id="abilityitemtemplate" class="abilitytemplate">
 			<a class="link ta_tip" href="#" data-tooltip-func="fnTooltipAbilityDesc">
-				<img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png">
+				<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png">
 				<div class="timeleft abilityitem"></div>
 				<div class="abilityitemquantity"></div>
 			</a>
 		</div>
 
 		<div id="activitytemplate" class="activitytemplate" data-tooltip-func="fnTooltipAbilityDesc">
-			<span class="icon"><img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png"></span>
+			<span class="icon"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png"></span>
 			<span class="ability_text">
 				<span class="name"></span> used <span class="ability"></span>
 			</span>
 		</div>
 
 		<div id="chattemplate" class="activitytemplate chattemplate">
-			<span class="icon"><img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png"></span>
+			<span class="icon"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png"></span>
 			<span class="ability_text">
 				<span class="name"></span> <span class="action">said:</span> <div class="ability"></div>
 			</span>
 		</div>
 
 		<div id="servertemplate" class="activitytemplate chattemplate">
-			<span class="icon"><img src="<?php echo $CDN; ?>/assets/emoticons/happy_creep.png"></span>
+			<span class="icon"><img src="<?php echo $CDN; ?>/MonsterMinigame/assets/emoticons/happy_creep.png"></span>
 			<span class="ability_text">
 				<span class="name">Game Notice</span>
 				<div class="ability"></div>
@@ -369,7 +369,7 @@ data-ga="<?php echo $Config->Google->Analytics; ?>">
 
 		<div id="activeinlanetemplate" class="activeinlanetemplate" data-tooltip-func="fnTooltipAbilityDesc">
 			<div class="icon">
-				<img src="<?php echo $CDN; ?>/assets/images/ability_template_ph.png">
+				<img src="<?php echo $CDN; ?>/MonsterMinigame/assets/images/ability_template_ph.png">
 				<div class="quantity"></div>
 			</div>
 		</div>
@@ -387,18 +387,18 @@ data-ga="<?php echo $Config->Google->Analytics; ?>">
 		</div>
 	</div>
 
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/thirdparty/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/thirdparty/tooltip.js"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/thirdparty/pixi.min.js"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/thirdparty/pixi-spine.min.js"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/thirdparty/pixi-particles.min.js"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/thirdparty/pixi-functions.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/javascript/thirdparty/pixi-functions.js' ); ?>"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/minigame.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/javascript/minigame.js' ); ?>"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/towerattack.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/javascript/towerattack.js' ); ?>"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/running.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/javascript/running.js' ); ?>"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/network.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/javascript/network.js' ); ?>"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/ui.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/javascript/ui.js' ); ?>"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/easing.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/javascript/easing.js' ); ?>"></script>
-	<script type="text/javascript" src="<?php echo $CDN; ?>/assets/javascript/enemies.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../assets/javascript/enemies.js' ); ?>"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/thirdparty/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/thirdparty/tooltip.js"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/thirdparty/pixi.min.js"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/thirdparty/pixi-spine.min.js"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/thirdparty/pixi-particles.min.js"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/thirdparty/pixi-functions.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/javascript/thirdparty/pixi-functions.js' ); ?>"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/minigame.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/javascript/minigame.js' ); ?>"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/towerattack.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/javascript/towerattack.js' ); ?>"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/running.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/javascript/running.js' ); ?>"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/network.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/javascript/network.js' ); ?>"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/ui.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/javascript/ui.js' ); ?>"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/easing.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/javascript/easing.js' ); ?>"></script>
+	<script type="text/javascript" src="<?php echo $CDN; ?>/MonsterMinigame/assets/javascript/enemies.js?v=<?php echo hash_file( 'crc32', __DIR__ . '/../MonsterMinigame/assets/javascript/enemies.js' ); ?>"></script>
 </body>
 </html>
