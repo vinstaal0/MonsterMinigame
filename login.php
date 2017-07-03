@@ -3,7 +3,7 @@
 
 	if( isset( $_SESSION[ 'SteamID' ] ) )
 	{
-		header( 'Location: /' );
+		header( 'Location: /MonsterMinigame/' );
 		die;
 	}
 
@@ -50,11 +50,11 @@
 		$_SESSION[ 'Name' ] = $Response[ 'personaname' ];
 		$_SESSION[ 'Avatar' ] = $Response[ 'avatar' ];
 
-		header( 'Location: /' );
+		header( 'Location: /MonsterMinigame/' );
 	}
 	else
 	{
-		header( 'Location: ' . SteamOpenID::GenerateLoginURL( '/login.php' ) );
+		header( 'Location: ' . SteamOpenID::GenerateLoginURL( '/MonsterMinigame/login.php' ) );
 	}
 
 	class SteamOpenID
